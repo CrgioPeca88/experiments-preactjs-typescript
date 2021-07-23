@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": false,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./dist/",
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.d.ts",
+        "./src/**/*.tsx"
+     ]
+}
