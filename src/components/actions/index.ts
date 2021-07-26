@@ -1,17 +1,18 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
-import { Link } from 'preact-router/match';
 
 import style from './style.scss';
 
 const Header: FunctionalComponent = () => {
+
+	const sendMessage = () => {
+		alert('Enviando mensaje ...');
+	}
+
 	return html`
-		<header class=${style.header}>
-			<h1>Chat</h1>
-			<nav>
-				<${Link} activeClassName=${style.active} href="/">User</${Link}>
-			</nav>
-		</header>
+		<footer class=${style.chat_actions}>
+			<button class=${style.send_button} onClick="${sendMessage}">Enviar</button>
+		</footer>
 	`
 };
 
