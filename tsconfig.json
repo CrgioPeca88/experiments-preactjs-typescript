@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
         "allowJs": false,
-        "strict": true,
+        "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
-        "outDir": "./dist/",
         "jsx": "react-jsx",
         "jsxImportSource": "preact",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "./dist/",
+        "resolveJsonModule": true,
+        "strict": true,
+        "target": "esnext",
     },
     "include": [
         "./src/**/*.ts",

@@ -1,9 +1,9 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 
-import Header from '../../components/header';
-import Content from '../../components/content';
-import Actions from '../../components/actions';
+import Header from '../header';
+import Content from '../content';
+import Actions from '../actions';
 import style from './style.scss';
 
 const Chat: FunctionalComponent = () => {

@@ -2,15 +2,16 @@ import { html } from 'htm/preact';
 import { Router } from 'preact-router';
 import { FunctionalComponent } from 'preact';
 
-import Chat from '../routes/chat';
+import WCChat from './chat/chat.web-component';
 
 const App: FunctionalComponent = () => {
 	
 	return html`
 		<div id="app">
 			<${Router}>
-				<${Chat} path="/" />
+				<${WCChat} path="/wc-chat" />
 			</${Router}>
+			<wc-chat></wc-chat>
 		</div>
 	`;
 }
