@@ -3,11 +3,15 @@ import { FunctionalComponent } from 'preact';
 
 import style from './style.scss';
 
-const Content: FunctionalComponent = () => {
+export interface ContentProps {
+	source: string;
+}
+
+const Content: FunctionalComponent<ContentProps> = (props: ContentProps) => {
 	return html`
 		<section class=${style.chat_content}>
 			<div class=${style.local_message}>
-				<p>Mensaje de prueba local q llegará al usuario remoto</p>
+				<p>Mensaje enviado desde <strong>${props.source}</strong> al cliente </p>
 			</div>
 		</section>
 	`
