@@ -1,5 +1,5 @@
 import { html } from 'htm/preact';
-import { useEffect } from 'preact/hooks'
+//import { useEffect } from 'preact/hooks'
 import { FunctionalComponent } from 'preact';
 
 import Header from '../header';
@@ -8,22 +8,26 @@ import Actions from '../actions';
 import {
 	Main
 } from './chat.style';
-import { event } from '../app';
+//import { event } from '../app';
 
+export interface ChatProps {
+	user: string;
+	source: string;
+}
 
-const Chat: FunctionalComponent = () => {
+const Chat: FunctionalComponent<ChatProps> = (props: ChatProps) => {
 
-	useEffect(() => {
+	/*useEffect(() => {
 		event.onChanges((payload) => {
 			console.log(payload)
 		}, '[SOURCE_DATA]');
-	});
+	});*/
 
 	return html`
 		<${Main}>
-			<${Header} user="Sergio" />
-			<${Content} source="Lupe" />
-			<${Actions} />
+			<${Header} user=${props.user} />
+			<${Content} source=${props.source} />
+			<${Actions} source=${props.source}/>
 		</${Main}>
 	`;
 };

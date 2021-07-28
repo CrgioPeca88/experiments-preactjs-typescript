@@ -10,3 +10,7 @@ export const LocalMessage = styled.div`
 	background-color:#2323f9;
 	border-radius: 5px;
 `;
+
+export const BoldText = styled.strong`
+	font-weight: bold;
+`

@@ -19,7 +19,7 @@ export const H_h1 = styled.h1`
 `;
 
 export const H_nav = styled.nav`
-	width: 20%;
+	width: 30%;
 	height: auto;
 	box-shadow: none;
 	background-color: transparent;
@@ -28,14 +28,9 @@ export const H_nav = styled.nav`
 export const H_a = styled.a`
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 56px;
-	padding: 0 15px;
-	min-width: 50px;
-	text-align: center;
-	background: rgba(255,255,255,0);
-	text-decoration: none;
-	color: #FFF;
-	will-change: background-color;
+	color: white;
 	&:hover {
 		background: rgba(0,0,0,0.2);	
 	};
