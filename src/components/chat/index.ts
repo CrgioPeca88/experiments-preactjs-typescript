@@ -8,7 +8,6 @@ import Actions from '../actions';
 import {
 	Main
 } from './chat.style';
-//import { event } from '../app';
 
 export interface ChatProps {
 	user: string;
@@ -16,12 +15,6 @@ export interface ChatProps {
 }
 
 const Chat: FunctionalComponent<ChatProps> = (props: ChatProps) => {
-
-	/*useEffect(() => {
-		event.onChanges((payload) => {
-			console.log(payload)
-		}, '[SOURCE_DATA]');
-	});*/
 
 	return html`
 		<${Main}>
