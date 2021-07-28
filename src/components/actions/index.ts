@@ -6,10 +6,10 @@ import {
 	SendMsgButton
 } from './actions.style';
 
-const Actions: FunctionalComponent = () => {
+const Actions: FunctionalComponent<any> = ( { source } ) => {
 
 	const sendMessage = () => {
-		alert('Enviando mensaje ...');
+		alert(`Enviando mensaje desde ${source} ...`);
 	}
 
 	return html`
