@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
-        "allowJs": false,
+        "allowJs": true,
         "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react-jsx",
         "jsxImportSource": "preact",
@@ -11,6 +12,12 @@
         "resolveJsonModule": true,
         "strict": true,
         "target": "esnext",
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "react": ["node_modules/preact/compat/"],
+            "react-dom": ["node_modules/preact/compat/"]
+        }
     },
     "include": [
         "./src/**/*.ts",

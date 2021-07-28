@@ -1,19 +1,22 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 
-import style from './style.scss';
+import {
+	ActionsFooter,
+	SendMsgButton
+} from './actions.style';
 
-const Header: FunctionalComponent = () => {
+const Actions: FunctionalComponent = () => {
 
 	const sendMessage = () => {
 		alert('Enviando mensaje ...');
 	}
 
 	return html`
-		<footer class=${style.chat_actions}>
-			<button class=${style.send_button} onClick="${sendMessage}">Enviar</button>
-		</footer>
+		<${ActionsFooter}>
+			<${SendMsgButton} onClick="${sendMessage}">Enviar</${SendMsgButton}>
+		</${ActionsFooter}>
 	`
 };
 
-export default Header;
+export default Actions;

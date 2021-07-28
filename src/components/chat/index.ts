@@ -5,7 +5,9 @@ import { FunctionalComponent } from 'preact';
 import Header from '../header';
 import Content from '../content';
 import Actions from '../actions';
-import style from './style.scss';
+import {
+	Main
+} from './chat.style';
 import { event } from '../app';
 
 
@@ -18,11 +20,11 @@ const Chat: FunctionalComponent = () => {
 	});
 
 	return html`
-		<main class=${style.chat_container}>
+		<${Main}>
 			<${Header} user="Sergio" />
 			<${Content} source="Lupe" />
 			<${Actions} />
-		</main>
+		</${Main}>
 	`;
 };
 

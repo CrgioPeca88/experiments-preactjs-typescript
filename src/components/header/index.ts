@@ -1,8 +1,12 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
-import { Link } from 'preact-router/match';
 
-import style from './style.scss';
+import { 
+	Header as ScHeader,
+	H_h1,
+	H_nav,
+	H_a
+ } from './header.style';
 
 export interface HeaderProps {
 	user: string;
@@ -11,12 +15,14 @@ export interface HeaderProps {
 const Header: FunctionalComponent<HeaderProps> = (props: HeaderProps) => {
 	
 	return html`
-		<header class=${style.header}>
-			<h1>Chat</h1>
-			<nav>
-				<${Link} activeClassName=${style.active} href="/">${props.user}</${Link}>
-			</nav>
-		</header>
+		<${ScHeader}>
+			<${H_h1}>Chat</${H_h1}>
+			<${H_nav}>
+				<${H_a}>
+					${props.user}
+				</${H_a}>
+			</${H_nav}>
+		</${ScHeader}>
 	`
 };
 

@@ -1,7 +1,10 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 
-import style from './style.scss';
+import {
+	LocalMessage,
+	Section
+} from './content.style';
 
 export interface ContentProps {
 	source: string;
@@ -9,11 +12,11 @@ export interface ContentProps {
 
 const Content: FunctionalComponent<ContentProps> = (props: ContentProps) => {
 	return html`
-		<section class=${style.chat_content}>
-			<div class=${style.local_message}>
+		<${Section}>
+			<${LocalMessage}>
 				<p>Mensaje enviado desde <strong>${props.source}</strong> al cliente </p>
-			</div>
-		</section>
+			</${LocalMessage}>
+		</${Section}>
 	`
 };
 
