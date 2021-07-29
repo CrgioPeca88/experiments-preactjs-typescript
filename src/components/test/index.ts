@@ -6,7 +6,7 @@ import Content from '../content';
 import Actions from '../actions';
 import {
 	Main
-} from './chat.style';
+} from './test.style';
 
 export interface ChatProps {
 	user: string;
