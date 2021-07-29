@@ -1,5 +1,3 @@
-const RunAfterBuildPlugin = require('webpack-run-after-build-plugin')
-
 let mainPathCustomElement = './src/components/chat/'
 let folderDist = 'dist'
 
@@ -51,10 +49,6 @@ module.exports = (process) => {
     })
   }
 
-  console.log('---------------------------------\n')
-  console.log('ENTRY -> \n', entry)
-  console.log('---------------------------------\n')
-
   return {
     entry,
     output: {
@@ -100,57 +94,6 @@ module.exports = (process) => {
         'react-dom': 'preact/compat'
       }
     },
-    plugins: [
-      new RunAfterBuildPlugin(() => {
-        console.log(
-          `---------------------------------\nHTML CREATED\n----------------------------------`
-        )
-
-        fs.writeFile(
-          path.resolve(__dirname, `${folderDist}/html.html`),
-          `
-
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-          </head>
-          <body>
-            ${[...Object.keys(wcRegisterName).map((key) => `<${key} />`)]}
-            ${[
-              ...Object.keys(wcRegisterName).map(
-                (key) => `${wcRegisterName[key]}`
-              )
-            ]}
-          </body>
-        </html>
-
-
-        `,
-          (err) => {
-            console.log(err)
-          }
-        )
-
-        Object.keys(wcRegisterName).map((key) => {
-          console.log('KEY', key)
-
-          fs.writeFile(
-            path.resolve(__dirname, `${folderDist}/${key}.html`),
-            `
-              <div>
-                <${key} />
-                ${wcRegisterName[key].replace(/'/g, '')}
-              </div>
-          `,
-            (err) => {
-              console.log(err)
-            }
-          )
-        })
-      })
-    ]
+    plugins: []
   }
 }
