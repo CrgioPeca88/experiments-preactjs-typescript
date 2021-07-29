@@ -1,4 +1,3 @@
-import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 
 import { 
@@ -14,16 +13,14 @@ export interface HeaderProps {
 
 const Header: FunctionalComponent<HeaderProps> = (props: HeaderProps) => {
 	
-	return html`
-		<${ScHeader}>
-			<${H_h1}>Chat</${H_h1}>
-			<${H_nav}>
-				<${H_a}>
-					${props.user}
-				</${H_a}>
-			</${H_nav}>
-		</${ScHeader}>
-	`
+	return (
+		<ScHeader>
+			<H_h1>Chat</H_h1>
+			<H_nav>
+				<H_a>{props.user}</H_a>
+			</H_nav>
+		</ScHeader>
+	);
 };
 
 export default Header;

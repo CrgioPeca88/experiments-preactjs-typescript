@@ -1,4 +1,3 @@
-import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 
 import {
@@ -12,11 +11,11 @@ const Actions: FunctionalComponent<any> = ( { source } ) => {
 		alert(`Enviando mensaje desde ${source} ...`);
 	}
 
-	return html`
-		<${ActionsFooter}>
-			<${SendMsgButton} onClick="${sendMessage}">Enviar</${SendMsgButton}>
-		</${ActionsFooter}>
-	`
+	return (
+		<ActionsFooter>
+			<SendMsgButton onClick={sendMessage}>Enviar</SendMsgButton>
+		</ActionsFooter>
+	);
 };
 
 export default Actions;

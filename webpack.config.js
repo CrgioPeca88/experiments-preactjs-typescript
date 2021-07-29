@@ -12,17 +12,17 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.ts?$/,
+          test: /\.tsx?$/,
           use: 'ts-loader',
-          exclude: /node_modules/
+          exclude: path.resolve(__dirname, 'node_modules')
         }
       ]
     },
     resolve: {
       modules: [path.resolve(__dirname, 'node_modules')],
-      extensions: ['.ts'],
+      extensions: ['.tsx', '.ts', '.js'],
       alias: {
-        react: 'preact/compat', 
+        'react': 'preact/compat', 
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat'
       }
