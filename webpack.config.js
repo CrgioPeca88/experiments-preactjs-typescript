@@ -1,43 +1,21 @@
-let mainPathCustomElement = './src/components/chat/'
-let folderDist = 'dist'
-
 const path = require('path')
 const fs = require('fs')
 
-let wcRegisterName = {}
+let mainPathCustomElement = './src/components/chat/'
 let arrayCE = []
 let entry = {}
-
 const wcParam = process.env.WC || null
 
-const readFile = (file, mainPathCustomElement) => {
-  fs.readFile(`${mainPathCustomElement}${file}.ts`, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err)
-      return
-    }
-
-    const registerName = data.split('mfTagName')[1].split(`'`)[1]
-
-    wcRegisterName = {
-      ...wcRegisterName,
-      [`${registerName}`]: `'<script src="http://localhost:8080/${file}.min.js"></script>'`
-    }
-  })
-}
-
 const fillEntry = (wc, mainPathCustomElement) => {
-  readFile(wc, mainPathCustomElement)
-  return (entry = {
+  entry = {
     ...entry,
     [wc]: `${mainPathCustomElement}${wc}.ts`
-  })
+  };
 }
 
-module.exports = (process) => {
+module.exports = () => {
   if (wcParam) {
     arrayCE = wcParam.split(',')
-
     arrayCE.forEach((wc) => {
       fillEntry(wc, mainPathCustomElement)
     })
@@ -53,7 +31,7 @@ module.exports = (process) => {
     entry,
     output: {
       filename: '[name].min.js',
-      path: path.resolve(__dirname, folderDist)
+      path: path.resolve(__dirname, 'dist')
     },
     performance: {
       hints: false
